@@ -1,5 +1,19 @@
 window.CRS_SOLUTIONS = [
   {
+    slug: "minhacampanha",
+    name: "MinhaCampanha",
+    eyebrow: "Campanhas solidárias",
+    categories: ["impacto","comunicacao"],
+    status: "Em implantação",
+    headline: "Sua causa merece uma página própria, fácil de criar e compartilhar.",
+    summary: "Crie uma página personalizada de campanha solidária, com história, imagem, informações de contribuição e uma arte para divulgação.",
+    audience: "Pessoas, famílias e iniciativas que precisam mobilizar uma rede de apoio para uma causa solidária.",
+    problem: "Pedidos de ajuda dispersos em mensagens dificultam apresentar a causa de forma clara e compartilhar informações de contribuição.",
+    use: "Preencha as informações da campanha, confira a pré-visualização e prepare uma página responsiva para compartilhar, com material de divulgação e destaque aos dados de contribuição.",
+    access: "Conheça a experiência de criação de campanhas. A oferta única informada para o serviço é de R$ 10,00; confira as condições e a disponibilidade do pagamento na própria ferramenta.",
+    cta: "Quero criar minha campanha solidária"
+  },
+  {
     slug: "feedback-compass-rose",
     name: "Feedback Compass Rose",
     eyebrow: "RH e Pessoas",
