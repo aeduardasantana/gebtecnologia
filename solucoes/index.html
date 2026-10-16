@@ -8,4 +8,27 @@
 <footer class="wrap footer">GEB Tecnologia · Soluções desenvolvidas e organizadas com Compass Rose Systems.</footer>
 <script src="data.js"></script><script>
 const grid=document.getElementById('grid'); function draw(filter='all'){grid.innerHTML='';CRS_SOLUTIONS.filter(s=>filter==='all'||s.categories.includes(filter)).forEach(s=>{const el=document.createElement('article');el.className='card';el.innerHTML='<div class="eyebrow">'+s.eyebrow+'</div><span class="status">'+s.status+'</span><h3>'+s.name+'</h3><p>'+s.summary+'</p><a href="'+s.slug+'/">Conhecer solução →</a>';grid.appendChild(el)})} draw(); document.querySelectorAll('.filter').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');draw(b.dataset.filter)});
-</script></body></html>
+</script><!-- Contato flutuante com identificação da página de origem -->
+<style>
+.geb-whatsapp-float{position:fixed;right:20px;bottom:20px;z-index:9999;display:flex;align-items:center;gap:9px;padding:13px 17px;border-radius:999px;background:#25d366;color:#10281b;text-decoration:none;font:700 14px/1.2 Manrope,Arial,sans-serif;box-shadow:0 7px 24px rgba(0,0,0,.24);transition:transform .2s,box-shadow .2s}
+.geb-whatsapp-float:hover,.geb-whatsapp-float:focus-visible{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.3)}
+.geb-whatsapp-float svg{height:24px;width:24px;flex:none;fill:currentColor}
+@media(max-width:600px){.geb-whatsapp-float{right:14px;bottom:calc(14px + env(safe-area-inset-bottom));padding:13px}.geb-whatsapp-float span{display:none}}
+</style>
+<a class="geb-whatsapp-float" href="https://wa.me/551121105473" target="_blank" rel="noopener noreferrer" aria-label="Falar com GEB Tecnologia pelo WhatsApp">
+<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 .8A15.2 15.2 0 0 0 2.9 23.7L.8 31.2l7.7-2A15.2 15.2 0 1 0 16 .8zm0 27.7a12.4 12.4 0 0 1-6.3-1.7l-.5-.3-4.6 1.2 1.2-4.5-.3-.5A12.5 12.5 0 1 1 16 28.5zm6.8-9.3c-.4-.2-2.3-1.1-2.7-1.2-.4-.1-.6-.2-.9.2-.3.4-1 1.2-1.2 1.5-.2.2-.5.3-.9.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7.4-.6c.1-.2.1-.5 0-.7l-1.2-2.9c-.3-.7-.6-.6-.9-.6h-.8c-.3 0-.7.1-1 .5-.3.4-1.3 1.3-1.3 3.1s1.3 3.5 1.5 3.7c.2.2 2.5 3.8 6 5.3.8.3 1.4.5 1.9.6.8.3 1.5.2 2.1.1.6-.1 2.3-.9 2.6-1.8.3-.9.3-1.7.2-1.8-.1-.2-.3-.3-.7-.5z"/></svg>
+<span>Fale conosco</span></a>
+<script>
+(function(){
+  const business='GEB Tecnologia';
+  const source=window.location.pathname==='/'?'Página inicial':window.location.pathname;
+  const origin='Origem: '+business+' — '+source+' ('+window.location.href.split('#')[0]+')';
+  document.querySelectorAll('a[href*="wa.me/551121105473"]').forEach(function(link){
+    const original=new URL(link.href);
+    const message=original.searchParams.get('text') || 'Olá! Gostaria de saber mais sobre as soluções do GEB Tecnologia.';
+    original.searchParams.set('text',message+String.fromCharCode(10,10)+origin);
+    link.href=original.toString();
+  });
+})();
+</script>
+</body></html>
