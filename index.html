@@ -125,7 +125,7 @@
   document.querySelectorAll('a[href*="wa.me/551121105473"]').forEach(function(link){
     const original=new URL(link.href);
     const message=original.searchParams.get('text') || 'Olá! Gostaria de saber mais sobre as soluções do GEB Tecnologia.';
-    original.searchParams.set('text',message+'\\n\\n'+origin);
+    original.searchParams.set('text',message+String.fromCharCode(10,10)+origin);
     link.href=original.toString();
   });
 })();
